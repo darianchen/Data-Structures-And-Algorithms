@@ -18,7 +18,5 @@ var lengthOfLongestSubstring = function(s) {
       }
 
     }
-    console.log(longest)
     return longest.length
- 
 };
