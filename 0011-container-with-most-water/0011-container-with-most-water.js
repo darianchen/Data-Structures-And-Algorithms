@@ -7,14 +7,9 @@ var maxArea = function(height) {
    let left = 0;
    let right = height.length - 1; 
     
-
-    //step 1 find minHeight
-    //step 2 find width
-    //step 3 area
-        
+    //find area
     //if height[left] < height[right], increment left, vice versa
         
-    
     while(left != right){
         let minHeight = Math.min(height[left], height[right]);
         let width = right - left;
@@ -28,9 +23,6 @@ var maxArea = function(height) {
     };
     
     return area;
-    
-    
-
 };
 
 
