@@ -17,7 +17,7 @@ var rob = function(nums){
     }
 
     
-    return Math.max(...memo);
+    return memo.at(-1);
     
 };
 
