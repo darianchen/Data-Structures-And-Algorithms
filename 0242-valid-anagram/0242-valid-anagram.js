@@ -15,11 +15,10 @@ var isAnagram = function (s, t) {
 	}
 
 	for (let j = 0; j < t.length; j++) {
-		if (!hashTable[t[j]]) {
+		if (!hashTable[t[j]] || hashTable[t[j]] < 0) {
 			return false;
 		}
 		hashTable[t[j]]--;
 	}
-
 	return true;
 };
