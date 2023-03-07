@@ -5,7 +5,7 @@
  */
 class ParkingSystem {
     constructor(big, medium, small){
-        this.carTypes = { 1 : big, 2 : medium, 3:small};      
+        this.carSpots = { 1 : big, 2 : medium, 3:small};      
     }
 };
 
@@ -14,8 +14,8 @@ class ParkingSystem {
  * @return {boolean}
  */
 ParkingSystem.prototype.addCar = function(carType) {
-    if(this.carTypes[carType] > 0){
-        this.carTypes[carType]--;
+    if(this.carSpots[carType] > 0){
+        this.carSpots[carType]--;
         return true;
     } else{
         return false;
