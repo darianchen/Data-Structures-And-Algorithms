@@ -8,10 +8,9 @@ class ParkingSystem {
         this.big = big;
         this.medium = medium;
         this.small = small;
-    }
+        this.carTypes = { 1 : this.big, 2 : this.medium, 3:this.small};      
 
-    
-    
+    }
 };
 
 /** 
@@ -19,14 +18,8 @@ class ParkingSystem {
  * @return {boolean}
  */
 ParkingSystem.prototype.addCar = function(carType) {
-    if(carType === 1 && this.big > 0){
-        this.big--;
-        return true;
-    } else if(carType === 2 && this.medium > 0){
-        this.medium--;
-        return true;
-    }else if(carType === 3 && this.small > 0){
-        this.small--;
+    if(this.carTypes[carType] > 0){
+        this.carTypes[carType]--;
         return true;
     } else{
         return false;
