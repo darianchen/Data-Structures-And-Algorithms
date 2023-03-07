@@ -7,13 +7,8 @@ class ParkingSystem {
     constructor(big, medium, small){
         this.carSpots = { 1 : big, 2 : medium, 3:small};      
     }
-};
-
-/** 
- * @param {number} carType
- * @return {boolean}
- */
-ParkingSystem.prototype.addCar = function(carType) {
+    
+    addCar = function(carType) {
     if(this.carSpots[carType] > 0){
         this.carSpots[carType]--;
         return true;
@@ -21,6 +16,13 @@ ParkingSystem.prototype.addCar = function(carType) {
         return false;
     }    
 };
+      
+};
+
+/** 
+ * @param {number} carType
+ * @return {boolean}
+ */
 
 /** 
  * Your ParkingSystem object will be instantiated and called as such:
