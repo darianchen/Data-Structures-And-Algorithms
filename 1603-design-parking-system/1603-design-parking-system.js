@@ -5,11 +5,7 @@
  */
 class ParkingSystem {
     constructor(big, medium, small){
-        this.big = big;
-        this.medium = medium;
-        this.small = small;
-        this.carTypes = { 1 : this.big, 2 : this.medium, 3:this.small};      
-
+        this.carTypes = { 1 : big, 2 : medium, 3:small};      
     }
 };
 
