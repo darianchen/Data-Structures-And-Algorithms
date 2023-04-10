@@ -16,7 +16,6 @@ var minSubArrayLen = function(target, nums) {
       const len = right - left + 1;
       if (len < minLen) {
         minLen = len;
-        subArray = nums.slice(left, right + 1);
       }
 
       sum -= nums[left];
