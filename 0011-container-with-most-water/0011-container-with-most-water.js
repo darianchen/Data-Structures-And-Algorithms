@@ -3,26 +3,20 @@
  * @return {number}
  */
 var maxArea = function(height) {
-   let area = 0; 
-   let left = 0;
-   let right = height.length - 1; 
+    let left = 0;
+    let right = height.length - 1;
+    let maxArea = 0;
     
-    //find area
-    //if height[left] < height[right], increment left, vice versa
-        
-    while(left != right){
-        let minHeight = Math.min(height[left], height[right]);
+    while(left < right) {
         let width = right - left;
-        area = Math.max(area, (minHeight * width)); //better
+        let currentHeight = Math.min(height[left], height[right]);
+        maxArea = Math.max(maxArea, width * currentHeight);
         
-        if(height[left] < height[right]){
-            left++;
-        }else{
-            right--;
-        }  
-    };
+        if(height[left] < height[right]) left++;
+        else right--;     
+    }
     
-    return area;
+    return maxArea;
 };
 
 
