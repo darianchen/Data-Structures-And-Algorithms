@@ -3,15 +3,27 @@
  * @return {boolean}
  */
 var containsDuplicate = function(nums) {
-    
-    let hash = {};
+    let set = new Set();
     
     for(const num of nums) {
-        hash[num] = hash[num] + 1 || 1;
+        if(set.has(num)) {
+            return true;
+        } else {
+            set.add(num);   
+        }
     }
     
-    for(const key in hash) {
-        if(hash[key] >= 2) return true;
-    }
     return false;
+    
+    
+//     let hash = {};
+    
+//     for(const num of nums) {
+//         hash[num] = hash[num] + 1 || 1;
+//     }
+    
+//     for(const key in hash) {
+//         if(hash[key] >= 2) return true;
+//     }
+//     return false;
 };
