@@ -7,6 +7,7 @@ var checkValid = function(matrix) {
     // Make a hash with every number and a value of 1
     // Iterate through all rows and cols and subtract 1
     // If value is 0 or key doesn't exist return false
+    // 0  and undefined are both false
     
     const size = matrix.length;
     
@@ -15,7 +16,7 @@ var checkValid = function(matrix) {
         let hash = createHash(size);
         for(let col = 0; col < size; col++) {
             let number = matrix[row][col]
-            if(hash[number] === 0 || hash[number] === undefined) {
+            if(!hash[number]) {
                 return false;
             } else{
                 hash[number]--;
@@ -28,7 +29,7 @@ var checkValid = function(matrix) {
         let hash = createHash(size);
         for(let row = 0; row < size; row++) {
             let number = matrix[row][col]
-            if(hash[number] === 0 || hash[number] === undefined) {
+            if(!hash[number]) {
                 return false;
             } else{
                 hash[number]--;
