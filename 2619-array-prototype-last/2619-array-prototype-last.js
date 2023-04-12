@@ -1,5 +1,5 @@
 Array.prototype.last = function() {
-    return this.length ? this.at(-1) : -1;
+    return this.length ? this[this.length - 1] : -1;
 };
 
 /**
