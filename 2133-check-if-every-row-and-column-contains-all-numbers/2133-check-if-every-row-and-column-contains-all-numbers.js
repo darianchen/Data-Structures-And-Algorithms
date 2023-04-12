@@ -11,9 +11,9 @@ var checkValid = function(matrix) {
     const size = matrix.length;
     
     // Rows
-    for(let row = 0; row < matrix.length; row++) {
+    for(let row = 0; row < size; row++) {
         let hash = createHash(size);
-        for(let col = 0; col < matrix[row].length; col++) {
+        for(let col = 0; col < size; col++) {
             let number = matrix[row][col]
             if(hash[number] === 0 || hash[number] === undefined) {
                 return false;
@@ -24,9 +24,9 @@ var checkValid = function(matrix) {
     }
     
     // Cols
-        for(let col = 0; col < matrix.length; col++) {
+        for(let col = 0; col < size; col++) {
         let hash = createHash(size);
-        for(let row = 0; row < matrix.length; row++) {
+        for(let row = 0; row < size; row++) {
             let number = matrix[row][col]
             if(hash[number] === 0 || hash[number] === undefined) {
                 return false;
