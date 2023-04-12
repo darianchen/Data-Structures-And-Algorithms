@@ -10,22 +10,21 @@ var longestConsecutive = function(nums) {
     // if it is then loop through set add find longest sequence
     // update longest sequence variable
     
-    const numSet = new Set(nums);
+    let numSet = new Set(nums);
     let longestSequence = 0;
-
-    for (let num of numSet) {
-        if (!numSet.has(num - 1)) {
-            let currentSequence = 1;
+    
+    for(const num of nums) {
+        if(!numSet.has(num - 1)){
+            let currentSequence = 0;
             let currentNum = num;
-
-            while (numSet.has(currentNum + 1)) {
-                currentNum += 1;
-                currentSequence += 1;
+            
+            while(numSet.has(currentNum)){
+                currentSequence++;
+                currentNum++;
             }
-
-            longestSequence = Math.max(longestSequence, currentSequence);
+        longestSequence = Math.max(longestSequence, currentSequence);
         }
     }
-
+    
     return longestSequence;
 };
