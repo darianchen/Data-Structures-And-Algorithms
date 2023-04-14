@@ -10,33 +10,12 @@
  * @return {ListNode}
  */
 var middleNode = function(head) {
-    node = head; //this makes length start at 1
-    length = 1;
+    let fast = head;
+    let slow = head;
     
-    while(node.next){
-        length += 1;
-        node = node.next;
+    while(fast && fast.next) {
+        slow = slow.next;
+        fast = fast.next.next;
     }
-    
-    // we have length
-//     if(length % 2 == 0){ //even
-        
-        
-//     }
-//     else{ //odd
-//         newNode = head;
-//         for(let  i = 0; i < length/2 + 1; i++){
-//             newNode = newNode.next;
-//         }
-//         return newNode;
-//     }
-    
-    newNode = head;
-
-    for(let i = 0; i < Math.floor(length/2); i++){
-        newNode = newNode.next;    
-    }
-    
-    return newNode;
-        
+    return slow;
 };
