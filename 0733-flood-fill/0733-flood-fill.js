@@ -18,12 +18,8 @@ function fill(image, sr, sc, newColor, originalColor) {
     if(image[sr][sc] === newColor) return;
     
     image[sr][sc] = newColor;
-    fill(image, sr - 1, sc, newColor, originalColor);
     fill(image, sr + 1, sc, newColor, originalColor);
-    fill(image, sr, sc - 1, newColor, originalColor);
+    fill(image, sr - 1, sc, newColor, originalColor);
     fill(image, sr, sc + 1, newColor, originalColor);
-}
-
-
-    
-    
+    fill(image, sr, sc - 1, newColor, originalColor);
+};
