@@ -3,24 +3,23 @@
  * @return {number}
  */
 var longestPalindrome = function(s) {
-    
-    // loop through s and create a hash for the amount of letters
-    // for every even amount add to the longest variable
-    
     let hash = {};
-    let longestPal = 0;
-    let add = false;
+    let length = 0;
+    let extra = 0;
     
     for(const char of s) {
         hash[char] = hash[char] + 1 || 1;
     }
     
     for(const key in hash) {
-        if(hash[key] === 1 || hash[key] % 2 === 1) add = true;
-        if(hash[key] > 1 && hash[key] % 2 === 0) longestPal += hash[key];
-        else if(hash[key] > 1) {
-            longestPal += hash[key] - 1;
+        if(hash[key] % 2 === 0) {
+            length += hash[key];
+        }
+        else {
+            extra = 1;
+            length += hash[key] - 1;
         }
     }
-    return add === true ? longestPal + 1 : longestPal;    
+    
+    return length + extra; 
 };
