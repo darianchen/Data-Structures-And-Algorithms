@@ -3,17 +3,17 @@
  * @return {boolean}
  */
 var findSubarrays = function(nums) {
-    let comp = {};
+    let hash = {};
     
-    for(let i = 1; i < nums.length; i++) {
-        let currentSum = nums[i - 1] + nums[i];
+    for(let i = 0; i < nums.length - 1; i++) {
+        let currentSum = nums[i] + nums[i + 1]
         
-        if(comp[currentSum] !== undefined && comp[currentSum] !== i - 1) {
+        if(hash[currentSum] !== undefined && hash[currentSum] !== i) {
             return true;
         } else {
-            comp[currentSum] = i - 1;   
+            hash[currentSum] = i;
         }
+        
     }
-    
     return false;
 };
